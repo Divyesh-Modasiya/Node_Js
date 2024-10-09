@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/send" method="post">
+        <input type="text" placeholder="name" name="name">
+        <button type="submit">submit</button>
+    </form>
+
+    <table border="1" width="50%">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>name</th>
+                <th>subject</th>
+                <th>city</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%  student.map((el)=>{ %>
+                <tr>
+                    <td><%= el.id %></td>
+                    <td><%= el.name %></td>
+                    <td><%= el.sub %></td>
+                    <td><%= el.city %></td>
+                </tr>
+          <%  }) %>
+        </tbody>
+    </table>
+</body>
+</html>

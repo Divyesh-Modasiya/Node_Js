@@ -15,7 +15,7 @@ data.get("/about",(req,res)=>{
 })
 
 data.post("/send",(req,res)=>{
-    console.log(req.body)
+    console.log(req.body);
     res.redirect("/");
 })
 

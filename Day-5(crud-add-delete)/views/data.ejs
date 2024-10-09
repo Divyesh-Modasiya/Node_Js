@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/send" method="post">
+        <input type="text" placeholder="Enter name" name="name">
+        <input type="text" placeholder="Subject" name="sub">
+        <input type="text" placeholder="City" name="city">
+        <button type="submit">Submit</button>
+    </form>
+
+    <table border="1" width="50%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>City</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% info.map((el)=>{ %>
+                <tr>
+                    <td><%= el.id %></td>
+                    <td><%= el.name %></td>
+                    <td><%= el.sub %></td>
+                    <td><%= el.city %></td>
+                    <td>
+                        <button>Edit</button>
+                        
+                     <a href="/delete?Id=<%= el.id%>"><button>Delete</button></a>
+                    </td>
+                </tr>
+          <%  }) %>
+        </tbody>
+    </table>
+</body>
+</html>
