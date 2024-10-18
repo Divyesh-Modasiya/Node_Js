@@ -56,7 +56,7 @@ app.post("/update",(req,res)=>{
             e.city = req.body.city
         }
     })
-    res.redirect("/")
+    res.redirect("/");
 })
 
 app.listen(port,(err)=>{

@@ -35,7 +35,7 @@ crud.get("/",(req,res)=>{
 crud.post("/send",(req,res)=>{
     req.body.id = info.length + 1;
     info.push(req.body);
-    res.redirect("/")
+    res.redirect("/");
 })
 
 crud.get("/delete",(req,res)=>{

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="head"><span>E</span>dit <span>Y</span>our <span>D</span>ata</h1>
+    <div class="main">
+        <form action="/update" method="post">
+            <input type="text" value="<%=data.id%>" name="id" hidden>
+            <input type="text" value="<%=data.book%>" placeholder="Book Name" name="book">
+            <input type="text"  value="<%=data.auther%>" placeholder="Auther Name" name="auther">
+            <input type="text"  value="<%=data.year%>" placeholder="Publish Year" name="year">
+            <input type="text"  value="<%=data.price%>" placeholder="Price" name="price">
+            <button type="submit">update</button>
+        </form>
+    </div>
+    
+   
+</body>
+</html>

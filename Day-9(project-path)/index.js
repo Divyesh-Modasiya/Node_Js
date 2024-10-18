@@ -16,7 +16,7 @@ app.get("/shop",(req,res)=>{
 app.get("/about",(req,res)=>{
     res.render("about");
 })
-app.get("/services",(req,res)=>{
+app.get("/services",(req,res)=>{    
     res.render("services");
 })
 app.get("/blog",(req,res)=>{
@@ -29,8 +29,6 @@ app.get("/cart",(req,res)=>{
     res.render("cart");
 })
 
-
 app.listen(port,(err)=>{
     err ? console.log(err) : console.log("server started at :- " + port);
-      
 })

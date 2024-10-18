@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../public/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="head"><span>E</span>nter <span>B</span>ooks <span>D</span>etails</h1>
+    <div class="main">
+        <form action="/send" method="post">
+            <input type="text" placeholder="Book Name" name="book">
+            <input type="text" placeholder="Auther Name" name="auther">
+            <input type="text" placeholder="Publish Year" name="year">
+            <input type="text" placeholder="Price" name="price">
+            <button type="submit">Add</button>
+        </form>
+    </div>
+    <h1><span>Y</span>our  <span>I</span>nformation</h1>
+    <div class="addData">
+        <table border="1" width="70%">
+            <thead>
+                <tr>
+                    <th>Book Name</th>
+                    <th>Auther Name</th>
+                    <th>Publish Year</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% data.map((e)=>{ %>
+                    <tr>
+                        <td><%=e.book%></td>
+                        <td><%=e.auther%></td>
+                        <td><%=e.year%></td>
+                        <td><%=e.price%></td>
+                        <td>
+                            <a href="/edit?id=<%=e.id%>"><button><i id="first" class="fa-solid fa-pen-to-square"></i></button></a>
+                            <a href="/delete?id=<%=e.id%>"><button><i id="second" class="fa-solid fa-trash"></i></button></a>
+                        </td>
+                    </tr>
+              <%  }) %>
+            </tbody>
+        </table>
+    </div>
+    
+    
+</body>
+</html>

@@ -17,6 +17,11 @@ body {
   font-size: 14px;
   background-color: #eff2f1; }
 
+::-webkit-scrollbar{
+  width: 0px;
+  height: 0px;
+}
+
 a {
   text-decoration: none;
   -webkit-transition: .3s all ease;
@@ -316,7 +321,7 @@ a {
   .we-help-section .imgs-grid {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (1fr)[27];
+    -ms-grid-columns: (1fr);
     grid-template-columns: repeat(27, 1fr);
     position: relative; }
     .we-help-section .imgs-grid:before {
