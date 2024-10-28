@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/send" method="post" enctype="multipart/form-data">
+        <input type="text" placeholder="name" name="name">
+        <input type="text" placeholder="subject" name="sub"><br>
+        <select name="city">
+            <option value="" hidden>--select--</option>
+            <option value="rajkot">Rajkot</option>
+            <option value="surat">Surat</option>
+        </select><br>
+        <input type="radio" name="gender" value="male">
+        <label for="">male</label>
+        <input type="radio" name="gender" value="female">
+        <label for="">Female</label><br>
+
+        <input type="checkbox" name="skill" value="writing">
+        <label for="">writing</label>
+        <input type="checkbox" name="skill" value="reading">
+        <label for="">reading</label>
+        <input type="checkbox" name="skill" value="learning">
+        <label for="">learning</label><br>
+        <input type="file" name="image">
+       <br> <button type="submit">add</button>
+    </form>
+    <table border="1" width="70%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Subject</th>
+                <th>City</th>
+                <th>Gender</th>
+                <th>Skill</th>
+                <th>Image</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody align="center">
+            <%data.map((e,i)=>{%>
+                <tr>
+                    <td><%=e.name%></td>
+                    <td><%=e.sub%></td>
+                    <td><%=e.city%></td>
+                    <td><%=e.gender%></td>
+                    <td><%=e.skill%></td>
+                    <td width="100px">
+                        <img src="<%=e.image%>" width="100px" height="100px" alt="" >
+                    </td>
+                    <td>
+                        <a href="/edit?id=<%=e.id%>"><button>edit</button></a>
+                        <a href="/delete?id=<%=e.id%>"><button>delete</button></a>
+                    </td>
+                </tr>
+           <% })%>
+        </tbody>
+    </table>
+</body>
+</html>

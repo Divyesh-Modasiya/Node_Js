@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/send" method="post" enctype="multipart/form-data">
+        <input type="text" placeholder="Name" name="name">
+        <input type="text" placeholder="City" name="city">
+        <input type="file" name="image">
+        <button type="submit">Add</button>
+    </form>
+
+    <table border="1" width="50%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Image</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% data.map((e)=>{ %>
+                <tr>
+                    <td><%=e.name%></td>
+                    <td><%=e.city%></td>
+                    <td><img src="<%=e.image%>" width="20px" alt=""></td>
+                    <td>
+                        <a href="/edit?id=<%=e.id%>"><button>edit</button></a>
+                        <a href="/delete?id=<%=e.id%>"><button>delete</button></a>
+                    </td>
+                </tr>
+           <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

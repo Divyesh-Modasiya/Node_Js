@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/update" method="post" enctype="multipart/form-data">
+        <input type="text" name="id" value="<%=data.id%>" hidden>
+        <input type="text" placeholder="name" name="name" value="<%=data.name%>">
+        <input type="text" placeholder="subject" name="sub" value="<%=data.sub%>"><br>
+        <select name="city">
+            <option value="" hidden>--select--</option>
+            <option value="rajkot" <%=data.city === 'rajkot' ? 'selected' : 'select'%>>Rajkot</option>
+            <option value="surat" <%=data.city === 'surat' ? 'selected' :'' %>>Surat</option>
+        </select><br>
+        <input type="radio" name="gender" value="male" <%=data.gender === "male" ? 'checked' : "" %>>
+        <label for="">male</label>
+        <input type="radio" name="gender" value="female" <%=data.gender === "female" ? 'checked' : "" %>>
+        <label for="">Female</label><br>
+
+        <input type="checkbox" name="skill" value="writing" <%=data.skill.includes("writing") ? 'checked' : ""%>>
+        <label for="">writing</label>
+        <input type="checkbox" name="skill" value="reading" <%=data.skill.includes("reading") ? 'checked' : ""%>>
+        <label for="">reading</label>
+        <input type="checkbox" name="skill" value="learning" <%=data.skill.includes("learning") ? 'checked' : ""%>>
+        <label for="">learning</label><br>
+        <input type="file" name="image">
+       <br> <button type="submit">update</button>
+    </form>
+
+</body>
+</html>

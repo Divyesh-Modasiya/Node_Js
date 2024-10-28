@@ -49,6 +49,10 @@ form button{
     border-radius: 10px;
     cursor: pointer;
 }
+::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+}
 .addData{
     width: 100%;
     display: flex;
