@@ -16,7 +16,6 @@ module.exports.LoginAdmin = async(req,res)=>{
         res.cookie("adminData",admin)
         res.redirect("/dashbord")
    }
-    
 }
 
 module.exports.Logout = (req,res)=>{
