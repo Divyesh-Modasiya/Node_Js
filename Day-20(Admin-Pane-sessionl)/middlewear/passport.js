@@ -34,15 +34,18 @@ passport.deserializeUser(async (id,done)=>{
 
 passport.checkAuth=(req,res,next) =>{
     if (req.isAuthenticated()) {
-        console.log("found");
-        
         return next();
     }
     else{
-        console.log("user not found");
-        
         return res.redirect("/");
     }
+}
+
+passport.AuthUser =(req,res,next)=>{
+    if (req.isAuthenticated()) {
+        res.locals.user = req.user        
+    }
+    next()
 }
 
 module.exports = passport;

@@ -16,5 +16,10 @@ rout.post("/send",multer,ctl.AddAdminData)
 rout.get("/delete",ctl.DeleteData)
 rout.get("/edit" ,passport.checkAuth,ctl.EditData)
 rout.post("/update",multer,ctl.UpdateData)
+rout.get("/profile",ctl.Profile)
+rout.get("/changePass",ctl.changePass);
+rout.post("/confirmpass",ctl.ConfirmPass)
+rout.post("/sendOtp",ctl.sendOtp)
+rout.post("/checkpass",ctl.checkPass)
 module.exports = rout
 

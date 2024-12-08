@@ -67,7 +67,6 @@ module.exports.Table=async(req,res)=>{
     }else{
         res.redirect("/login")
     }
-    
 }
 
 module.exports.Delete = async(req,res)=>{
@@ -81,7 +80,6 @@ module.exports.Edit = async(req,res)=>{
     }else{
         res.redirect("/login")
     }
-   
 }
 module.exports.UpdateData = async(req,res)=>{
     let data = await MainSchema.findByIdAndUpdate(req.body.id,req.body)
