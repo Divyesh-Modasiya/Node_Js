@@ -11,6 +11,8 @@ module.exports.SendSubCat=async(req,res)=>{
     data && res.redirect("/subCategory/subAddCat")
 }
 module.exports.ViewSubCat=async(req,res)=>{
-    let data = await SubCatSchema.find({})
+    let data = await SubCatSchema.find({}).populate({
+        path:"categoryId"
+    })
     data && res.render("subViewCat",{data})
 }

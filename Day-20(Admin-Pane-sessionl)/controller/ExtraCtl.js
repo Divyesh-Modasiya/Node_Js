@@ -10,6 +10,12 @@ module.exports.SendExtraCat=async(req,res)=>{
     data && res.redirect("/Extra/ExtraSubAddCat")
 }
 module.exports.ViewExtraCat=async(req,res)=>{
-    let data = await ExtraSchema.find({})
+    let data = await ExtraSchema.find({}).populate({
+        path:"ExtraCatId",
+        populate:{
+            path:"categoryId"
+        }
+    })
+    
     data && res.render("ExtraViewCat",{data})
 }

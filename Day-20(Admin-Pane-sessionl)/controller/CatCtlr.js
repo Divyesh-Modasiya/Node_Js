@@ -6,7 +6,6 @@ module.exports.CatData =(req,res)=>{
     res.render("addCat")
 }
 module.exports.SendCat=async(req,res)=>{
-    console.log(req.file);
     
     req.body.image = req.file.path
     let data = await CatSchema.create(req.body)
@@ -15,6 +14,5 @@ module.exports.SendCat=async(req,res)=>{
 
 module.exports.ViewCat = async(req,res)=>{
     let data = await CatSchema.find({})
-    console.log(data);
     data && res.render("viewCat",{data})
 }

@@ -90,7 +90,9 @@
                                   <thead>
                                     <tr>
                                       <th scope="col">#</th>
+                                      <th scope="col">Extra Category</th>
                                       <th scope="col">Sub Category</th>
+                                      <th scope="col">Category</th>
                                       <th scope="col">Action</th>
                                     </tr>
                                   </thead>
@@ -99,6 +101,8 @@
                                         <tr>
                                             <th scope="row"><%=i+1%></th>
                                             <td><%=e.ExtraCatName%></td>
+                                            <td><%=e.ExtraCatId.SubCatName%></td>
+                                            <td><%=e.ExtraCatId.categoryId.catName%></td>
                                             <td>
                                                <a href="/edit?id=<%=e.id%>"><button>Edit</button></a>
                                                <a href="/delete?id=<%=e.id%>"> <button>Delete</button></a>
