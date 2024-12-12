@@ -5,6 +5,10 @@ const ProductSchema = mongoose.Schema({
         type : String,
         required : true
     },
+    image:{
+        type:String,
+        require:true
+    },
     ProductId:{
         type : mongoose.Schema.Types.ObjectId,
         ref:"ExtraSchema",

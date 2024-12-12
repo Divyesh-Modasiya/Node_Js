@@ -89,6 +89,7 @@
                                     <tr>
                                       <th scope="col">#</th>
                                       <th scope="col">Product</th>
+                                      <th scope="col">Image</th>
                                       <th scope="col">ExtraCat</th>
                                       <th scope="col">SubCat</th>
                                       <th scope="col">Category</th>
@@ -100,6 +101,7 @@
                                         <tr>
                                             <th scope="row"><%=i+1%></th>
                                             <td><%=e.productName%></td>
+                                            <td><img src="/<%=e.image%>" width="50px" alt=""></td>
                                             <td><%=e.ProductId.ExtraCatName%></td>
                                             <td><%=e.ProductId.ExtraCatId.SubCatName%></td>
                                             <td><%=e.ProductId.ExtraCatId.categoryId.catName%></td>
